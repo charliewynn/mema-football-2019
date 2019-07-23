@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React, {useEffect} from 'react';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import './App.css';
-import Scores from './Components/Scores';
+import HomeComponent from './Components/Home';
+import ScoresComponent from './Components/Scores';
 import { connect } from 'react-redux';
 import { LoadScoresAction } from "./Actions/ScoresActions";
 import { LoadPlayersAction } from './Actions/PlayersActions';
@@ -16,21 +17,19 @@ function App({LoadScores, Scores, LoadPlayers, Players}) {
 
     <div className="App">
       <header className="App-header">
-        <p>
-          {JSON.stringify(Scores)}
-        </p>
-        <p>
-          {JSON.stringify(Players)}
-        </p>
+        Mema Football Pool 2019
       </header>
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" render={()=><div>home</div>}></Route>
+          <Route exact path="/" component={HomeComponent}></Route>
           <Route exact path="/players" render={()=><div>players</div>}></Route>
           <Route exact path="/players/:name" render={()=><div>players2</div>}></Route>
-          <Route exact path="/scores" component={Scores}></Route>
+          <Route exact path="/scores" component={ScoresComponent}></Route>
         </Switch>
       </BrowserRouter>
+        <p>
+          {JSON.stringify(Players)}
+        </p>
     </div>
   );
 }

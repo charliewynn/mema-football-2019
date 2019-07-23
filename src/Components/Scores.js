@@ -1,7 +1,14 @@
 import React, {useEffect, useState} from 'react';
+import { connect } from 'react-redux';
 
-function Scores(){
+function Scores({Scores}){
 
-    return (<div>scores page</div>)
+    return (<div>scores page<div>{JSON.stringify(Scores)}</div></div>)
 }
-export default Scores;
+
+const mapStateToProps = (state) => ({
+  Scores: state.Scores,
+  Players: state.Players
+});
+
+export default connect(mapStateToProps)(Scores);
