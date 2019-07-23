@@ -18,7 +18,13 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.HeaderLink {
+  color:white;
+  text-decoration:none;
+}
+.HeaderLink:hover {
+  text-decoration:underline;
+}
 .App-link {
   color: #61dafb;
 }
