@@ -1,4 +1,4 @@
-[Live Site](https://cwynn.com/mema-football-pool-2019).
+[Live Site](https://cwynn.com/mema-football-2019).
 
 ## What is this?
 This is the site for viewing scores for the 2019 Mema Football Pool. To be included contact Mema
