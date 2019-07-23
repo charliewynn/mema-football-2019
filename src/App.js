@@ -12,7 +12,6 @@ function App({LoadScores, Scores, LoadPlayers, Players}) {
     LoadScores();
     LoadPlayers();
   },[]);
-  console.log("url", process.env.PUBLIC_URL);
   
   return (
 
@@ -20,7 +19,7 @@ function App({LoadScores, Scores, LoadPlayers, Players}) {
       <header className="App-header">
         Mema Football Pool 2019
       </header>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter>
         <Switch>
           <Route exact path="/" component={HomeComponent}></Route>
           <Route exact path="/players" render={()=><div>players</div>}></Route>
