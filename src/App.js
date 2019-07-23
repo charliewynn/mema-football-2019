@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { LoadScoresAction } from "./Actions/ScoresActions";
 import { LoadPlayersAction } from './Actions/PlayersActions';
 
-function App({LoadScores, Scores, LoadPlayers, Players}) {
+function App({LoadScores, LoadPlayers}) {
   useEffect(()=>{
     LoadScores();
     LoadPlayers();
@@ -25,11 +25,9 @@ function App({LoadScores, Scores, LoadPlayers, Players}) {
           <Route exact path="/players" render={()=><div>players</div>}></Route>
           <Route exact path="/players/:name" render={()=><div>players2</div>}></Route>
           <Route exact path="/scores" component={ScoresComponent}></Route>
+          <Route render={()=><div>404<div><Link to="/">Go Home</Link></div></div>}></Route>
         </Switch>
       </BrowserRouter>
-        <p>
-          {JSON.stringify(Players)}
-        </p>
     </div>
   );
 }

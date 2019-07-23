@@ -1,12 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-function Home(){
+function Home({Scores}){
 
     return (<div>
         <h2>Home</h2>
         <Link to="/scores">Scores</Link>
+        {/*JSON.stringify(Scores)*/}
     </div>)
 }
 
