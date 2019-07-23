@@ -1,23 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 
 function App() {
+  const [players, setPlayers] = useState([]);
+  const [scores, setScores] = useState([]);
+  const playersApi = 'https://api.sheety.co/d50d6864-69d7-46b3-b39d-a4ea29480254';
+  const scoresApi = 'https://api.sheety.co/63dbeee0-3aa4-4e79-ac39-545ac3ee7b86';
+  useEffect(()=>{
+
+    fetch(scoresApi).then(d=>d.json()).then(d=>{
+      setScores(d);
+    });
+    fetch(playersApi).then(d=>d.json()).then(d=>{
+      setPlayers(d);
+    });
+  },[]);
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {JSON.stringify(scores)}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>
+          {JSON.stringify(players)}
+        </p>
       </header>
     </div>
   );
