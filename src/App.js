@@ -1,31 +1,55 @@
 import React, {useEffect, useState} from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+import Scores from './Components/Scores';
+import { connect } from 'react-redux';
+import { LoadScoresAction } from "./Actions/ScoresActions";
 
-function App() {
+function App({LoadScores, Scores}) {
   const [players, setPlayers] = useState([]);
-  const [scores, setScores] = useState([]);
   const playersApi = 'https://api.sheety.co/d50d6864-69d7-46b3-b39d-a4ea29480254';
-  const scoresApi = 'https://api.sheety.co/63dbeee0-3aa4-4e79-ac39-545ac3ee7b86';
   useEffect(()=>{
-    fetch(scoresApi).then(d=>d.json()).then(d=>{
-      setScores(d);
-    });
+    LoadScores();
+
     fetch(playersApi).then(d=>d.json()).then(d=>{
       setPlayers(d);
     });
   },[]);
+  
   return (
+
     <div className="App">
       <header className="App-header">
         <p>
-          {JSON.stringify(scores)}
+          {JSON.stringify(Scores)}
         </p>
         <p>
           {JSON.stringify(players)}
         </p>
       </header>
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" render={()=><div>home</div>}></Route>
+          <Route exact path="/players" render={()=><div>players</div>}></Route>
+          <Route exact path="/players/:name" render={()=><div>players2</div>}></Route>
+          <Route exact path="/scores" component={Scores}></Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state,ownProps) => {
+ 
+  console.log("Mapping state", state)
+  return {
+  Scores: state.Scores
+}};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    LoadScores: () =>
+      dispatch(LoadScoresAction()),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(App);

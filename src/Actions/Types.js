@@ -1,0 +1,2 @@
+export const START_LOAD_SCORES = "START_LOAD_SCORES";
+export const SCORES_LOADED = "SCORES_LOADED";
