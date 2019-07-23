@@ -1,16 +1,15 @@
 {
   "files": {
     "main.css": "/mema-football-2019/static/css/main.2cce8147.chunk.css",
-    "main.js": "/mema-football-2019/static/js/main.e959102b.chunk.js",
-    "main.js.map": "/mema-football-2019/static/js/main.e959102b.chunk.js.map",
+    "main.js": "/mema-football-2019/static/js/main.55f1b2b8.chunk.js",
+    "main.js.map": "/mema-football-2019/static/js/main.55f1b2b8.chunk.js.map",
     "runtime~main.js": "/mema-football-2019/static/js/runtime~main.3d40c256.js",
     "runtime~main.js.map": "/mema-football-2019/static/js/runtime~main.3d40c256.js.map",
-    "static/js/2.b41502e9.chunk.js": "/mema-football-2019/static/js/2.b41502e9.chunk.js",
-    "static/js/2.b41502e9.chunk.js.map": "/mema-football-2019/static/js/2.b41502e9.chunk.js.map",
+    "static/js/2.c2695c00.chunk.js": "/mema-football-2019/static/js/2.c2695c00.chunk.js",
+    "static/js/2.c2695c00.chunk.js.map": "/mema-football-2019/static/js/2.c2695c00.chunk.js.map",
     "index.html": "/mema-football-2019/index.html",
-    "precache-manifest.d94ec7089270636922378fdd432c2f38.js": "/mema-football-2019/precache-manifest.d94ec7089270636922378fdd432c2f38.js",
+    "precache-manifest.ccd420595563ac0996cd77b11e069627.js": "/mema-football-2019/precache-manifest.ccd420595563ac0996cd77b11e069627.js",
     "service-worker.js": "/mema-football-2019/service-worker.js",
-    "static/css/main.2cce8147.chunk.css.map": "/mema-football-2019/static/css/main.2cce8147.chunk.css.map",
-    "static/media/logo.svg": "/mema-football-2019/static/media/logo.5d5d9eef.svg"
+    "static/css/main.2cce8147.chunk.css.map": "/mema-football-2019/static/css/main.2cce8147.chunk.css.map"
   }
 }
