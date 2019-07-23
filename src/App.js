@@ -24,7 +24,7 @@ function App({LoadScores, LoadPlayers}) {
         <Switch>
           <Route exact path="/" component={HomeComponent}></Route>
           <Route exact path="/players" component={PlayersComponent}></Route>
-          <Route exact path="/players/:name" render={()=><div>players2</div>}></Route>
+          <Route exact path="/players/:name" component={PlayersComponent}></Route>
           <Route exact path="/scores" component={ScoresComponent}></Route>
           <Route render={()=><div>404<div><Link to="/">Go Home</Link></div></div>}></Route>
         </Switch>
