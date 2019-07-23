@@ -13,11 +13,9 @@ export const ScoresLoaded = scores => ({
 
 export const LoadScoresAction = ()=>{
     return async (dispatch) =>{
-        
         dispatch(StartLoadScores());
         const response = await fetch(scoresURL);
         const json = await response.json();
-        console.log("Got Scores", json);
         dispatch(ScoresLoaded(json));
     }
 }

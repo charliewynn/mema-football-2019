@@ -4,16 +4,12 @@ import './App.css';
 import Scores from './Components/Scores';
 import { connect } from 'react-redux';
 import { LoadScoresAction } from "./Actions/ScoresActions";
+import { LoadPlayersAction } from './Actions/PlayersActions';
 
-function App({LoadScores, Scores}) {
-  const [players, setPlayers] = useState([]);
-  const playersApi = 'https://api.sheety.co/d50d6864-69d7-46b3-b39d-a4ea29480254';
+function App({LoadScores, Scores, LoadPlayers, Players}) {
   useEffect(()=>{
     LoadScores();
-
-    fetch(playersApi).then(d=>d.json()).then(d=>{
-      setPlayers(d);
-    });
+    LoadPlayers();
   },[]);
   
   return (
@@ -24,7 +20,7 @@ function App({LoadScores, Scores}) {
           {JSON.stringify(Scores)}
         </p>
         <p>
-          {JSON.stringify(players)}
+          {JSON.stringify(Players)}
         </p>
       </header>
       <BrowserRouter>
@@ -39,17 +35,15 @@ function App({LoadScores, Scores}) {
   );
 }
 
-const mapStateToProps = (state,ownProps) => {
- 
-  console.log("Mapping state", state)
-  return {
-  Scores: state.Scores
-}};
+const mapStateToProps = (state,ownProps) => ({
+  Scores: state.Scores,
+  Players: state.Players
+});
 
 const mapDispatchToProps = dispatch => {
   return {
-    LoadScores: () =>
-      dispatch(LoadScoresAction()),
+    LoadScores: () => dispatch(LoadScoresAction()),
+    LoadPlayers: () => dispatch(LoadPlayersAction()),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(App);
