@@ -4,6 +4,7 @@ import './App.css';
 import HomeComponent from './Components/Home';
 import ScoresComponent from './Components/Scores';
 import PlayersComponent from './Components/Players';
+import PlayerComponent from './Components/Player';
 import { connect } from 'react-redux';
 import { LoadScoresAction } from "./Actions/ScoresActions";
 import { LoadPlayersAction } from './Actions/PlayersActions';
@@ -24,7 +25,7 @@ function App({LoadScores, LoadPlayers}) {
         <Switch>
           <Route exact path="/" component={HomeComponent}></Route>
           <Route exact path="/players" component={PlayersComponent}></Route>
-          <Route exact path="/players/:name" component={PlayersComponent}></Route>
+          <Route exact path="/players/:name" component={PlayerComponent}></Route>
           <Route exact path="/scores" component={ScoresComponent}></Route>
           <Route render={()=><div>404<div><Link to="/">Go Home</Link></div></div>}></Route>
         </Switch>
