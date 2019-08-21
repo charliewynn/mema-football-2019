@@ -47,7 +47,10 @@ const computeIfReady = state => {
   //    if(closest < thisGuy)
   //      //this is wrong =//closest = thisGuy
 
-  for (let p of players) p.gameScores = {};
+  for (let p of players) {
+    p.gameScores = {};
+    p.totalScore = 0;
+  }
 
   for (let g of scores.filter(g => g.complete)) {
     let closest = { ou: 100, opp: 100 };
@@ -84,7 +87,8 @@ const computeIfReady = state => {
         g.closestOpp.push(p.name);
         p.gameScores[g.id]++;
       }
+      p.totalScore += p.gameScores[g.id];
     }
   }
-  return { ...state, outcome };
+  return { ...state, outcome: { scores, players } };
 };
