@@ -1,19 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import Game from "./Game";
 
 function Home({ Outcome }) {
   return (
     <div>
-      <h2>Home</h2>
-      {JSON.stringify(Outcome.outcome)}
+      {Outcome.outcome.scores.map(game => (
+        <Game key={game.id} game={game}></Game>
+      ))}
       <div>
         <Link to="/scores">Scores</Link>
       </div>
       <div>
         <Link to="/players">Players</Link>
       </div>
-      {/*JSON.stringify(Scores)*/}
     </div>
   );
 }

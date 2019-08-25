@@ -5,8 +5,12 @@ import {
   START_LOAD_SCORES
 } from "../Actions/Types";
 
-export default function PlayersReducer(
-  state = { loadingPlayers: false, loadingScores: false },
+export default function OutcomeReducer(
+  state = {
+    loadingPlayers: false,
+    outcome: { scores: [] },
+    loadingScores: false
+  },
   action
 ) {
   switch (action.type) {
@@ -36,28 +40,21 @@ export default function PlayersReducer(
 const computeIfReady = state => {
   if (state.loadingPlayers || state.loadingScores) return state;
 
-  let outcome = { todo: true };
   const { players, scores } = state;
-  console.log("computing", players, scores);
-  //compute here
-
-  //foreach game
-  //  closest = null;
-  //  foreach player
-  //    if(closest < thisGuy)
-  //      //this is wrong =//closest = thisGuy
 
   for (let p of players) {
     p.gameScores = {};
     p.totalScore = 0;
   }
 
-  for (let g of scores.filter(g => g.complete)) {
-    let closest = { ou: 100, opp: 100 };
-    g.ouWon = g.ouScore > g.oppScore;
+  for (let g of scores) {
     g.guessedWinner = [];
     g.closestOu = [];
     g.closestOpp = [];
+  }
+  for (let g of scores.filter(g => g.complete)) {
+    let closest = { ou: 100, opp: 100 };
+    g.ouWon = g.ouScore > g.oppScore;
     for (let p of players) {
       p.gameScores[g.id] = 0;
       let [p_ou, p_opp] = p[g.id].split("-");
