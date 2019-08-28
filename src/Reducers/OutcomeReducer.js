@@ -61,8 +61,11 @@ const computeIfReady = state => {
       p.ouWon = parseInt(p_ou) > parseInt(p_opp);
       p.ou = Math.abs(g.ouScore - p_ou);
       p.opp = Math.abs(g.oppScore - p_opp);
-      closest.ou = Math.min(closest.ou, p.ou);
-      closest.opp = Math.min(closest.opp, p.opp);
+      if(g.ouWon === p.ouWon)
+      {
+        closest.ou = Math.min(closest.ou, p.ou);
+        closest.opp = Math.min(closest.opp, p.opp);
+      }
       console.log(p.name, p.ou, p.opp, g.id, g.team);
     }
     for (let p of players) {
