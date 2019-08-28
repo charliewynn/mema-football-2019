@@ -8,7 +8,7 @@ import {
 export default function OutcomeReducer(
   state = {
     loadingPlayers: false,
-    outcome: { scores: [] },
+    outcome: { scores: [], players: [] },
     loadingScores: false
   },
   action

@@ -2,18 +2,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Game from "./Game";
+import PlayerCard from "./PlayerCard";
 
 function Home({ Outcome }) {
   return (
     <div>
-      {Outcome.outcome.scores.map(game => (
+      {
+        Outcome.outcome.scores.map(game => (
         <Game key={game.id} game={game}></Game>
       ))}
-      <div>
+      <div id = "ScoresDiv">
         <Link to="/scores">Scores</Link>
       </div>
-      <div>
-        <Link to="/players">Players</Link>
+      <div id = "PlayersDiv">
+        {Outcome.outcome.players.map(player=> (
+          <PlayerCard key={player.name} player={player}></PlayerCard>
+        ))}
       </div>
     </div>
   );
