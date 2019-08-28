@@ -75,10 +75,6 @@ const computeIfReady = state => {
         g.guessedWinner.push(p.name);
         p.gameScores[g.id]++;
       }
-      const allowAnyoneToWinClosest = false;
-      if (allowAnyoneToWinClosest) {
-        eligibleForClosest = true;
-      }
       if (eligibleForClosest && p.ou === closest.ou) {
         g.closestOu.push(p.name);
         p.gameScores[g.id]++;
