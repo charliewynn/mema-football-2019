@@ -18,7 +18,6 @@ function Home({ Outcome }) {
         {Outcome.outcome.players.map(player=> (
           <PlayerCard key={player.name} player={player}></PlayerCard>
         ))}
-        <Link to="/players">Players</Link>
       </div>
     </div>
   );

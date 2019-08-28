@@ -4,7 +4,7 @@ function PlayerCard({ player }) {
   return (
     <div className="game">
       <div className="title">
-        {player.name}
+        {player.name.toUpperCase()}
       </div>
       <div className="title">
         Player Score: 
