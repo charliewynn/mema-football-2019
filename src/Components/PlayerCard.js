@@ -1,13 +1,13 @@
 import React from "react";
 
-function PlayerCard({ player }) {
+function PlayerCard({ player, playerClicked }) {
   return (
-    <div className="player" onClick={() => alert("View " + player.name + "'s Scores")}>
+    <div className="player" onClick={() => playerClicked(player)}>
       <div className="title">
         <strong>{player.name}</strong>
       </div>
       <div>
-        Player Score: 
+        Player Score:
         {player.totalScore}
       </div>
     </div>

@@ -5,24 +5,30 @@ import Game from "./Game";
 import PlayerCard from "./PlayerCard";
 
 function Home({ Outcome }) {
+  const playerClicked = player => {
+    alert(JSON.stringify(player));
+  };
   return (
-    <div id = "HomeDiv">
+    <div id="HomeDiv">
       <br></br>
-      <div id = "GamesDiv">
-        {
-          Outcome.outcome.scores.map(game => (
+      <div id="GamesDiv">
+        {Outcome.outcome.scores.map(game => (
           <Game key={game.id} game={game}></Game>
         ))}
       </div>
       <br></br>
-      <div id = "PlayersDiv">
-        {Outcome.outcome.players.map(player=> (
-          <PlayerCard key={player.name} player={player}></PlayerCard>
+      <div id="PlayersDiv">
+        {Outcome.outcome.players.map(player => (
+          <PlayerCard
+            playerClicked={playerClicked}
+            key={player.name}
+            player={player}
+          ></PlayerCard>
         ))}
       </div>
       <br></br>
-      <div id = "ScoresDiv">
-      Click a Player to Display Predicted Scores
+      <div id="ScoresDiv">
+        Click a Player to Display Predicted Scores
         {/* <Link to="/scores">Scores</Link> */}
       </div>
     </div>

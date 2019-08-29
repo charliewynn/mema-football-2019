@@ -2,7 +2,15 @@ import React from "react";
 
 function Game({ game }) {
   return (
-    <div className="game" onClick={() => window.open("https://www.espn.com/college-football/game/_/gameId/" + game.espnGameId)}>
+    <div
+      className="game"
+      onClick={() =>
+        window.open(
+          "https://www.espn.com/college-football/game/_/gameId/" +
+            game.espnGameId
+        )
+      }
+    >
       <div className="title">
         <strong>
           OU
@@ -13,7 +21,7 @@ function Game({ game }) {
       <div>{game.date}</div>
       {game.complete && (
         <>
-          <div>Did OU Win? {JSON.stringify(game.ouWon)}</div>
+          <div>OU {game.ouWon ? "won" : "lost"}</div>
           <div>
             {game.ouScore} to {game.oppScore}
           </div>
