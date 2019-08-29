@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 function Scores({Scores}){
-
     return (<div>scores page<div>{JSON.stringify(Scores)}</div></div>)
 }
 

@@ -2,11 +2,11 @@ import React from "react";
 
 function PlayerCard({ player }) {
   return (
-    <div className="game">
+    <div className="player" onClick={() => alert("View " + player.name + "'s Scores")}>
       <div className="title">
-        {player.name.toUpperCase()}
+        <strong>{player.name}</strong>
       </div>
-      <div className="title">
+      <div>
         Player Score: 
         {player.totalScore}
       </div>

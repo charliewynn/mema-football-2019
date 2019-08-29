@@ -6,18 +6,24 @@ import PlayerCard from "./PlayerCard";
 
 function Home({ Outcome }) {
   return (
-    <div>
-      {
-        Outcome.outcome.scores.map(game => (
-        <Game key={game.id} game={game}></Game>
-      ))}
-      <div id = "ScoresDiv">
-        <Link to="/scores">Scores</Link>
+    <div id = "HomeDiv">
+      <br></br>
+      <div id = "GamesDiv">
+        {
+          Outcome.outcome.scores.map(game => (
+          <Game key={game.id} game={game}></Game>
+        ))}
       </div>
+      <br></br>
       <div id = "PlayersDiv">
         {Outcome.outcome.players.map(player=> (
           <PlayerCard key={player.name} player={player}></PlayerCard>
         ))}
+      </div>
+      <br></br>
+      <div id = "ScoresDiv">
+      Click a Player to Display Predicted Scores
+        {/* <Link to="/scores">Scores</Link> */}
       </div>
     </div>
   );
