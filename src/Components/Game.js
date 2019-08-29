@@ -2,15 +2,7 @@ import React from "react";
 
 function Game({ game }) {
   return (
-    <div
-      className="game"
-      onClick={() =>
-        window.open(
-          "https://www.espn.com/college-football/game/_/gameId/" +
-            game.espnGameId
-        )
-      }
-    >
+    <div className="game">
       <div className="title">
         <strong>
           OU
@@ -30,6 +22,12 @@ function Game({ game }) {
           <div>Closest to Opp score: {game.closestOpp.join(", ")}</div>
         </>
       )}
+    <button class="button button1" onClick={() =>
+        window.open(
+          "https://www.espn.com/college-football/game/_/gameId/" +
+            game.espnGameId
+        )
+      }>ESPN</button>
     </div>
   );
 }
