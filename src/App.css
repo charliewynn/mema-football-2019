@@ -27,3 +27,16 @@
   border: 1px solid #282c34;
   display: inline-block;
 }
+
+.game:hover{
+  background: lightgreen; 
+}
+
+.player {
+  border: 1px solid #282c34;
+  display: inline-block;
+}
+
+.player:hover{
+  background: lightgoldenrodyellow; 
+}
