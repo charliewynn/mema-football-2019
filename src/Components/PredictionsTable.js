@@ -2,8 +2,8 @@ import React from "react";
 
 export default ({ players, games }) => (
   <table align="center">
-    {GetTableHeaders(games)}
-    {GetPlayerPredictions(players)}
+    <thead>{GetTableHeaders(games)}</thead>
+    <tbody>{GetPlayerPredictions(players)}</tbody>
   </table>
 );
 

@@ -5,7 +5,7 @@ import Game from "./Game";
 import PlayerCard from "./PlayerCard";
 import PredictionsTable from "./PredictionsTable";
 
-function Home({ Outcome }) {
+function Home({ Outcome, Config }) {
   const playerClicked = player => {
     alert(JSON.stringify(player));
   };
@@ -28,9 +28,14 @@ function Home({ Outcome }) {
         ))}
       </div>
       <br></br>
-      <div id="ScoresDiv">
-        <PredictionsTable players={Outcome.outcome.players} games={Outcome.outcome.scores}></PredictionsTable>
-      </div>
+      {Config.showTable && (
+        <div id="ScoresDiv">
+          <PredictionsTable
+            players={Outcome.outcome.players}
+            games={Outcome.outcome.scores}
+          ></PredictionsTable>
+        </div>
+      )}
     </div>
   );
 }
@@ -38,7 +43,8 @@ function Home({ Outcome }) {
 const mapStateToProps = state => ({
   Scores: state.Scores,
   Players: state.Players,
-  Outcome: state.Outcome
+  Outcome: state.Outcome,
+  Config: state.Config
 });
 
 export default connect(mapStateToProps)(Home);
