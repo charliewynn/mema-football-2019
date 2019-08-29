@@ -1,7 +1,7 @@
 import React from "react";
 
 export default ({ players, games }) => (
-  <table align="center">
+  <table id="scoresTable" class="hidden">
     {GetTableHeaders(games)}
     {GetPlayerPredictions(players)}
   </table>

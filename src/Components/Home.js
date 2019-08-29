@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import Game from "./Game";
+import GameCard from "./GameCard";
 import PlayerCard from "./PlayerCard";
 import PredictionsTable from "./PredictionsTable";
 
@@ -14,7 +14,7 @@ function Home({ Outcome }) {
       <br></br>
       <div id="GamesDiv">
         {Outcome.outcome.scores.map(game => (
-          <Game key={game.id} game={game}></Game>
+          <GameCard key={game.id} game={game}></GameCard>
         ))}
       </div>
       <br></br>
@@ -28,11 +28,24 @@ function Home({ Outcome }) {
         ))}
       </div>
       <br></br>
+      <button class="largeButton button2" onClick={() => showHideScores()}>Show/Hide Scores</button>
+      <br></br>
+      <br></br>
       <div id="ScoresDiv">
         <PredictionsTable players={Outcome.outcome.players} games={Outcome.outcome.scores}></PredictionsTable>
       </div>
     </div>
   );
+}
+
+function showHideScores()
+{
+  var x = document.getElementById("scoresTable");
+  if (x.classList.contains("hidden")) {
+    x.classList.remove('hidden');
+  } else {
+    x.classList.add('hidden');
+  }
 }
 
 const mapStateToProps = state => ({

@@ -24,21 +24,25 @@
 }
 
 .game {
+  background-color: lightgreen;
+  padding: 8px 8px;
   border: 1px solid #282c34;
   display: inline-block;
 }
 
 .game:hover{
-  background: lightgreen; 
+  background: rgba(91, 196, 91, 0.973); 
 }
 
 .player {
+  background-color: rgb(255, 255, 153);
+  padding: 8px 8px;
   border: 1px solid #282c34;
   display: inline-block;
 }
 
 .player:hover{
-  background: lightgoldenrodyellow; 
+  background: rgb(247, 247, 95); 
 }
 
 table, th, td {
@@ -46,15 +50,28 @@ table, th, td {
 }
 
 table {
-  table-layout: fixed ;
-  width: 100% ;
+  margin: 20px;
+  align-self: center;
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  border-spacing: 2px;
+}
+
+th {
+  background-color: rgb(226, 119, 119);
 }
 
 td {
-  width: 25% ;
+  width: 20% ;
+  background-color: rgb(230, 195, 195);
 }
 
-.button {
+.hidden {
+  display: none;
+}
+
+.smallButton {
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
@@ -75,7 +92,33 @@ td {
   border: 1px solid #4CAF50;
 }
 
+
 .button1:hover {
   background-color: #4CAF50;
+  color: white;
+}
+
+.largeButton {
+  border: none;
+  color: white;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 2px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button2 {
+  background-color:  rgb(230, 195, 195);
+  color: black; 
+  border: 1px solid rgb(228, 82, 82); 
+}
+
+.button2:hover {
+  background-color: rgb(228, 82, 82); 
   color: white;
 }
