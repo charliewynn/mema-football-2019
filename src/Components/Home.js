@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import Game from "./Game";
 import PlayerCard from "./PlayerCard";
+import PredictionsTable from "./PredictionsTable";
 
 function Home({ Outcome }) {
   const playerClicked = player => {
@@ -28,8 +29,7 @@ function Home({ Outcome }) {
       </div>
       <br></br>
       <div id="ScoresDiv">
-        Click a Player to Display Predicted Scores
-        {/* <Link to="/scores">Scores</Link> */}
+        <PredictionsTable players={Outcome.outcome.players} games={Outcome.outcome.scores}></PredictionsTable>
       </div>
     </div>
   );
