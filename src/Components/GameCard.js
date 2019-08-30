@@ -11,30 +11,30 @@ function GameCard({ game }) {
         </strong>
       </div>
       <div>{game.date}</div>
-      {
-        game.complete ? 
-        (
-          <>
-            <div>OU {game.ouWon ? "won" : "lost"}</div>
-            <div>
-              {game.ouScore} to {game.oppScore}
-            </div>
-          </>
-        ) 
-        : 
-        (
-          <>
+      {game.complete ? (
+        <>
+          <div>OU {game.ouWon ? "won" : "lost"}</div>
+          <div>
+            {game.ouScore} to {game.oppScore}
+          </div>
+        </>
+      ) : (
+        <>
           <br></br>
           <br></br>
-          </>
-        )
-      }
-    <button class="smallButton button1" onClick={() =>
-        window.open(
-          "https://www.espn.com/college-football/game/_/gameId/" +
-            game.espnGameId
-        )
-      }>ESPN</button>
+        </>
+      )}
+      <button
+        class="smallButton button1"
+        onClick={() =>
+          window.open(
+            "https://www.espn.com/college-football/game/_/gameId/" +
+              game.espnGameId
+          )
+        }
+      >
+        ESPN
+      </button>
     </div>
   );
 }

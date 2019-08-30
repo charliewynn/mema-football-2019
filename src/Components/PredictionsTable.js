@@ -1,9 +1,9 @@
 import React from "react";
 
 export default ({ players, games }) => (
-  <table id="scoresTable" class="hidden">
-    {GetTableHeaders(games)}
-    {GetPlayerPredictions(players)}
+  <table align="center">
+    <thead>{GetTableHeaders(games)}</thead>
+    <tbody>{GetPlayerPredictions(players)}</tbody>
   </table>
 );
 

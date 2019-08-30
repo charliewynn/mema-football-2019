@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import GameCard from "./GameCard";
 import PlayerCard from "./PlayerCard";
 import PredictionsTable from "./PredictionsTable";
 
-function Home({ Outcome }) {
+function Home({ Outcome, Config }) {
+  const [showScoresTable, showHideScores] = useState(Config.showTable);
+
   const playerClicked = player => {
     alert(JSON.stringify(player));
   };
@@ -28,30 +30,38 @@ function Home({ Outcome }) {
         ))}
       </div>
       <br></br>
-      <button class="largeButton button2" onClick={() => showHideScores()}>Show/Hide Scores</button>
-      <br></br>
-      <br></br>
-      <div id="ScoresDiv">
-        <PredictionsTable players={Outcome.outcome.players} games={Outcome.outcome.scores}></PredictionsTable>
-      </div>
+      <button
+        class="largeButton button2"
+        onClick={() => showHideScores(!showScoresTable)}
+      >
+        Show/Hide Scores
+      </button>
+      {showScoresTable && (
+        <div id="ScoresDiv">
+          <PredictionsTable
+            players={Outcome.outcome.players}
+            games={Outcome.outcome.scores}
+          ></PredictionsTable>
+        </div>
+      )}
     </div>
   );
 }
 
-function showHideScores()
-{
+function showHideScores() {
   var x = document.getElementById("scoresTable");
   if (x.classList.contains("hidden")) {
-    x.classList.remove('hidden');
+    x.classList.remove("hidden");
   } else {
-    x.classList.add('hidden');
+    x.classList.add("hidden");
   }
 }
 
 const mapStateToProps = state => ({
   Scores: state.Scores,
   Players: state.Players,
-  Outcome: state.Outcome
+  Outcome: state.Outcome,
+  Config: state.Config
 });
 
 export default connect(mapStateToProps)(Home);
