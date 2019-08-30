@@ -7,7 +7,7 @@ function PlayerCard({ player, playerClicked }) {
         <strong>{player.name}</strong>
       </div>
       <div>
-        Player Score:
+        Points: 
         {player.totalScore}
       </div>
     </div>
