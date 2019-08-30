@@ -1,6 +1,6 @@
 import React from "react";
 
-function Game({ game }) {
+function GameCard({ game }) {
   return (
     <div className="game">
       <div className="title">
@@ -11,19 +11,21 @@ function Game({ game }) {
         </strong>
       </div>
       <div>{game.date}</div>
-      {game.complete && (
+      {game.complete ? (
         <>
           <div>OU {game.ouWon ? "won" : "lost"}</div>
           <div>
             {game.ouScore} to {game.oppScore}
           </div>
-          <div>Guessed Winner: {game.guessedWinner.join(", ")}</div>
-          <div>Closest to OU score: {game.closestOu.join(", ")}</div>
-          <div>Closest to Opp score: {game.closestOpp.join(", ")}</div>
+        </>
+      ) : (
+        <>
+          <br></br>
+          <br></br>
         </>
       )}
       <button
-        className="button button1"
+        class="smallButton button1"
         onClick={() =>
           window.open(
             "https://www.espn.com/college-football/game/_/gameId/" +
@@ -37,7 +39,7 @@ function Game({ game }) {
   );
 }
 
-export default Game;
+export default GameCard;
 
 //urls
 //Houston: https://www.espn.com/college-football/game/_/gameId/401112114

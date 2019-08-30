@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import Game from "./Game";
+import GameCard from "./GameCard";
 import PlayerCard from "./PlayerCard";
 import PredictionsTable from "./PredictionsTable";
 
 function Home({ Outcome, Config }) {
+  const [showScoresTable, showHideScores] = useState(Config.showTable);
+
   const playerClicked = player => {
     alert(JSON.stringify(player));
   };
@@ -14,7 +16,7 @@ function Home({ Outcome, Config }) {
       <br></br>
       <div id="GamesDiv">
         {Outcome.outcome.scores.map(game => (
-          <Game key={game.id} game={game}></Game>
+          <GameCard key={game.id} game={game}></GameCard>
         ))}
       </div>
       <br></br>
@@ -28,7 +30,13 @@ function Home({ Outcome, Config }) {
         ))}
       </div>
       <br></br>
-      {Config.showTable && (
+      <button
+        class="largeButton button2"
+        onClick={() => showHideScores(!showScoresTable)}
+      >
+        Show/Hide Scores
+      </button>
+      {showScoresTable && (
         <div id="ScoresDiv">
           <PredictionsTable
             players={Outcome.outcome.players}
@@ -38,6 +46,15 @@ function Home({ Outcome, Config }) {
       )}
     </div>
   );
+}
+
+function showHideScores() {
+  var x = document.getElementById("scoresTable");
+  if (x.classList.contains("hidden")) {
+    x.classList.remove("hidden");
+  } else {
+    x.classList.add("hidden");
+  }
 }
 
 const mapStateToProps = state => ({
