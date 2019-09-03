@@ -38,13 +38,11 @@
   flex-direction: column;
   min-height: 100px;
 }
-
+.game.selected {
+  background-color: green;
+}
 .game .button1 {
   margin-top: auto;
-}
-
-.game:hover {
-  background: rgba(91, 196, 91, 0.973);
 }
 
 .player {
@@ -52,6 +50,12 @@
   padding: 8px 8px;
   border: 1px solid #282c34;
   display: inline-block;
+}
+.player.guessedWinner {
+  border-bottom: 5px solid lightgreen;
+}
+.player.earnedBonus {
+  border-bottom: 5px solid blue;
 }
 
 .player:hover {

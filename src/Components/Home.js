@@ -9,6 +9,7 @@ function Home({ Outcome, Config }) {
     //console.log("Loading Home in debug mode");
   }
   const [showScoresTable, showHideScores] = useState(Config.showTable);
+  const [selectedGame, changeSelectedGame] = useState(null);
 
   const playerClicked = player => {
     alert(JSON.stringify(player));
@@ -16,10 +17,13 @@ function Home({ Outcome, Config }) {
   return (
     <div id="HomeDiv">
       <h1>{Config.announcement}</h1>
+      {JSON.stringify(selectedGame)}
       <div id="GamesDiv">
         {Outcome.outcome.scores.map(game => (
           <GameCard
+            selected={game === selectedGame}
             key={game.id}
+            changeSelectedGame={changeSelectedGame}
             bonusWinnerText={Config.bonusWinnerText}
             showBonusWinners={Config.showBonusWinners}
             game={game}
@@ -29,6 +33,16 @@ function Home({ Outcome, Config }) {
       <div id="PlayersDiv">
         {Outcome.outcome.players.map(player => (
           <PlayerCard
+            selectedGameTeam={selectedGame && selectedGame.team}
+            guessedWinner={
+              selectedGame && selectedGame.guessedWinner.includes(player.name)
+            }
+            earnedBonusOpp={
+              selectedGame && selectedGame.closestOpp.includes(player.name)
+            }
+            earnedBonusOU={
+              selectedGame && selectedGame.closestOu.includes(player.name)
+            }
             playerClicked={playerClicked}
             key={player.name}
             player={player}

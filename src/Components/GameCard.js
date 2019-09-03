@@ -1,8 +1,17 @@
 import React from "react";
 
-function GameCard({ game, showBonusWinners, bonusWinnerText }) {
+function GameCard({
+  game,
+  showBonusWinners,
+  bonusWinnerText,
+  changeSelectedGame,
+  selected
+}) {
   return (
-    <div className="game">
+    <div
+      className={(selected ? "selected " : "") + "game"}
+      onClick={() => changeSelectedGame(game)}
+    >
       <div className="title">
         <strong>
           OU
