@@ -34,7 +34,7 @@ function Home({ Outcome, Config }) {
         className="largeButton button2"
         onClick={() => showHideScores(!showScoresTable)}
       >
-        Show/Hide Scores
+        {showScoresTable ? "Hide" : "Show"} Scores Table
       </button>
       {showScoresTable && (
         <div id="ScoresDiv">
