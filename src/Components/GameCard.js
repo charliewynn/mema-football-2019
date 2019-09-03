@@ -1,6 +1,6 @@
 import React from "react";
 
-function GameCard({ game }) {
+function GameCard({ game, showBonusWinners }) {
   return (
     <div className="game">
       <div className="title">
@@ -11,21 +11,22 @@ function GameCard({ game }) {
         </strong>
       </div>
       <div>{game.date}</div>
-      {game.complete ? (
+      {game.complete && (
         <>
           <div>OU {game.ouWon ? "won" : "lost"}</div>
           <div>
             {game.ouScore} to {game.oppScore}
           </div>
-        </>
-      ) : (
-        <>
-          <br></br>
-          <br></br>
+          {showBonusWinners && (
+            <div>
+              Bonuses awarded to:{" "}
+              {[...new Set([...game.closestOu, ...game.closestOpp])].join(" ")}
+            </div>
+          )}
         </>
       )}
       <button
-        class="smallButton button1"
+        className="smallButton button1"
         onClick={() =>
           window.open(
             "https://www.espn.com/college-football/game/_/gameId/" +
