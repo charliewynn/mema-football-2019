@@ -11,7 +11,11 @@ const url = "https://api.sheety.co/85d08bfc-d77b-42a5-9d36-50c7aef7dc35";
 fetch(url)
   .then(resp => resp.json())
   .then(config => {
-    config = config[0];
+    const urlParams = new URLSearchParams(window.location.search);
+    const configIndex = urlParams.has("debug") ? 1 : 0;
+
+    config = config[configIndex];
+
     console.log(config);
     ReactDOM.render(
       <Provider store={configureStore(config)}>
