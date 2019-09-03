@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/mema-football-2019/precache-manifest.a899974fd738315e14264660eb17ea58.js"
+  "/mema-football-2019/precache-manifest.d950b8174c94928ee7f7a9a19bdd06b8.js"
 );
 
 self.addEventListener('message', (event) => {
