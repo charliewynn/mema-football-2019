@@ -1,6 +1,6 @@
 import React from "react";
 
-function GameCard({ game, showBonusWinners }) {
+function GameCard({ game, showBonusWinners, bonusWinnerText }) {
   return (
     <div className="game">
       <div className="title">
@@ -19,7 +19,7 @@ function GameCard({ game, showBonusWinners }) {
           </div>
           {showBonusWinners && (
             <div>
-              Bonuses awarded to:{" "}
+              {bonusWinnerText}
               {[...new Set([...game.closestOu, ...game.closestOpp])].join(" ")}
             </div>
           )}

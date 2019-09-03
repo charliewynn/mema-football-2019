@@ -12,10 +12,12 @@ function Home({ Outcome, Config }) {
   };
   return (
     <div id="HomeDiv">
+      <h1>{Config.announcement}</h1>
       <div id="GamesDiv">
         {Outcome.outcome.scores.map(game => (
           <GameCard
             key={game.id}
+            bonusWinnerText={Config.bonusWinnerText}
             showBonusWinners={Config.showBonusWinners}
             game={game}
           ></GameCard>
