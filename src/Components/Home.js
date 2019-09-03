@@ -17,7 +17,6 @@ function Home({ Outcome, Config }) {
   return (
     <div id="HomeDiv">
       <h1>{Config.announcement}</h1>
-      {JSON.stringify(selectedGame)}
       <div id="GamesDiv">
         {Outcome.outcome.scores.map(game => (
           <GameCard
