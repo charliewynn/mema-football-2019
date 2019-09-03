@@ -57,6 +57,9 @@
 .player.earnedBonus {
   border-bottom: 5px solid blue;
 }
+.player .title {
+  font-weight: bold;
+}
 
 .player:hover {
   background: rgb(247, 247, 95);
@@ -139,4 +142,18 @@ td {
 .button2:hover {
   background-color: rgb(228, 82, 82);
   color: white;
+}
+
+.scores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.scores .score {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 200px;
 }

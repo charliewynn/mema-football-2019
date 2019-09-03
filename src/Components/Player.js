@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-function Player({ Players, match }) {
+function Player({ Players, Scores, match }) {
   if (Players.loading) return <div>Loading...</div>;
 
   const playerName = match.params.name;
@@ -19,10 +19,18 @@ function Player({ Players, match }) {
   }
   return (
     <div>
-      Hello {playerName}. Here are your scores: {JSON.stringify(player)}
-      <div>
-        <Link to="/players">Back to all Players</Link>
-      </div>
+      <h1>Here are {playerName}'s scores</h1>
+      {Scores.scores && (
+        <div className="scores">
+          {Scores.scores.map(g => (
+            <div className="score">
+              <div>{g.team}</div>
+              <div>{player[0][g.id]}</div>
+            </div>
+          ))}
+        </div>
+      )}
+      <Link to="/">Back to all Players</Link>
     </div>
   );
 }

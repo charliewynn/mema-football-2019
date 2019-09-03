@@ -1,8 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function PlayerCard({
   player,
-  playerClicked,
   guessedWinner,
   earnedBonusOU,
   earnedBonusOpp,
@@ -23,9 +23,9 @@ function PlayerCard({
     points++;
   }
   return (
-    <div className={classes} onClick={() => playerClicked(player)}>
+    <div className={classes}>
       <div className="title">
-        <strong>{player.name}</strong>
+        <Link to={"/players/" + player.name}>{player.name}</Link>
       </div>
       <div>
         Total Points:

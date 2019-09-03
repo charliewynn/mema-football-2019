@@ -11,9 +11,6 @@ function Home({ Outcome, Config }) {
   const [showScoresTable, showHideScores] = useState(Config.showTable);
   const [selectedGame, changeSelectedGame] = useState(null);
 
-  const playerClicked = player => {
-    alert(JSON.stringify(player));
-  };
   return (
     <div id="HomeDiv">
       <h1>{Config.announcement}</h1>
@@ -42,7 +39,6 @@ function Home({ Outcome, Config }) {
             earnedBonusOU={
               selectedGame && selectedGame.closestOu.includes(player.name)
             }
-            playerClicked={playerClicked}
             key={player.name}
             player={player}
           ></PlayerCard>
