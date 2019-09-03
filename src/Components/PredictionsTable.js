@@ -11,14 +11,14 @@ const GetTableHeaders = games => (
   <tr>
     <th>Player</th>
     {games.map(g => (
-      <th>{g.team}</th>
+      <th key={g.team}>{g.team}</th>
     ))}
   </tr>
 );
 
 const GetPlayerPredictions = players =>
   players.map(p => (
-    <tr>
+    <tr key={p.name}>
       <td>{p.name}</td>
       <td>{p.houston}</td>
       <td>{p.southDakota}</td>

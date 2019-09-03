@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import GameCard from "./GameCard";
 import PlayerCard from "./PlayerCard";
@@ -13,13 +12,15 @@ function Home({ Outcome, Config }) {
   };
   return (
     <div id="HomeDiv">
-      <br></br>
       <div id="GamesDiv">
         {Outcome.outcome.scores.map(game => (
-          <GameCard key={game.id} game={game}></GameCard>
+          <GameCard
+            key={game.id}
+            showBonusWinners={Config.showBonusWinners}
+            game={game}
+          ></GameCard>
         ))}
       </div>
-      <br></br>
       <div id="PlayersDiv">
         {Outcome.outcome.players.map(player => (
           <PlayerCard
@@ -29,9 +30,8 @@ function Home({ Outcome, Config }) {
           ></PlayerCard>
         ))}
       </div>
-      <br></br>
       <button
-        class="largeButton button2"
+        className="largeButton button2"
         onClick={() => showHideScores(!showScoresTable)}
       >
         Show/Hide Scores
@@ -46,15 +46,6 @@ function Home({ Outcome, Config }) {
       )}
     </div>
   );
-}
-
-function showHideScores() {
-  var x = document.getElementById("scoresTable");
-  if (x.classList.contains("hidden")) {
-    x.classList.remove("hidden");
-  } else {
-    x.classList.add("hidden");
-  }
 }
 
 const mapStateToProps = state => ({
