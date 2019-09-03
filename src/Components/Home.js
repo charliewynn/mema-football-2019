@@ -5,6 +5,9 @@ import PlayerCard from "./PlayerCard";
 import PredictionsTable from "./PredictionsTable";
 
 function Home({ Outcome, Config }) {
+  if (Config.debug) {
+    //console.log("Loading Home in debug mode");
+  }
   const [showScoresTable, showHideScores] = useState(Config.showTable);
 
   const playerClicked = player => {

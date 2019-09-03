@@ -15,6 +15,7 @@ fetch(url)
     const configIndex = urlParams.has("debug") ? 1 : 0;
 
     config = config[configIndex];
+    config.debug = urlParams.has("debug");
 
     console.log(config);
     ReactDOM.render(
