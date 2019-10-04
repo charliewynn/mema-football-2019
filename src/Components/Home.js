@@ -12,7 +12,12 @@ function Home({ Outcome, Config }) {
   const [selectedGame, changeSelectedGame] = useState(null);
 
   return (
-    <div id="HomeDiv">
+    <div
+      id="HomeDiv"
+      onClick={() => {
+        changeSelectedGame(null);
+      }}
+    >
       <h1>{Config.announcement}</h1>
       <div id="GamesDiv">
         {Outcome.outcome.scores.map(game => (

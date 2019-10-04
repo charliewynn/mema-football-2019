@@ -10,7 +10,11 @@ function GameCard({
   return (
     <div
       className={(selected ? "selected " : "") + "game"}
-      onClick={() => changeSelectedGame(game)}
+      onClick={e => {
+        e.stopPropagation();
+        e.nativeEvent.stopImmediatePropagation();
+        changeSelectedGame(game);
+      }}
     >
       <div className="title">
         <strong>
