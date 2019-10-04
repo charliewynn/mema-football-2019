@@ -36,6 +36,16 @@ function Home({ Outcome, Config }) {
           ></GameCard>
         ))}
       </div>
+      {selectedGame && (
+        <div id="key">
+          <div>
+            <span id="extra-point-key" className="key"></span>Extra Point
+          </div>
+          <div>
+            <span id="correct-guess-key" className="key"></span>Correct Guess
+          </div>
+        </div>
+      )}
       <div id="PlayersDiv">
         {Outcome.outcome.players.map(player => (
           <PlayerCard

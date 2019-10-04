@@ -178,3 +178,39 @@ td {
 #ScoresDiv td {
   width: initial;
 }
+
+#key {
+  display: flex;
+  justify-content: center;
+}
+
+#extra-point-key {
+  background-color: blue;
+}
+#correct-guess-key {
+  background-color: lightgreen;
+}
+
+.key {
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+  display: flex;
+  margin-right: 5px;
+  align-self: flex-end;
+}
+.key > div {
+  line-height: 15px;
+  font-size: 25pt;
+}
+#key > div {
+  display: flex;
+}
+#key > div:first-child {
+  display: flex;
+  margin-right: 30px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  align-items: baseline;
+}
