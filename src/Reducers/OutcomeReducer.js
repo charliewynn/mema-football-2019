@@ -85,5 +85,6 @@ const computeIfReady = state => {
       p.totalScore += p.gameScores[g.id];
     }
   }
+  players.sort((a, b) => b.totalScore - a.totalScore);
   return { ...state, outcome: { scores, players } };
 };
