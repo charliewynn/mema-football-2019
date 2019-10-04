@@ -19,7 +19,11 @@ function Home({ Outcome, Config }) {
           <GameCard
             selected={game === selectedGame}
             key={game.id}
-            changeSelectedGame={changeSelectedGame}
+            changeSelectedGame={game => {
+              game === selectedGame
+                ? changeSelectedGame(null)
+                : changeSelectedGame(game);
+            }}
             bonusWinnerText={Config.bonusWinnerText}
             showBonusWinners={Config.showBonusWinners}
             game={game}
