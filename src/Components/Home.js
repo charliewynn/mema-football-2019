@@ -18,7 +18,7 @@ function Home({ Outcome, Config }) {
         changeSelectedGame(null);
       }}
     >
-      <h1>{Config.announcement}</h1>
+      <div dangerouslySetInnerHTML={{ __html: Config.announcement }}></div>
       {Outcome.outcome.scores.length === 0 && <div>Loading</div>}
       <div id="GamesDiv">
         {Outcome.outcome.scores.map(game => (
