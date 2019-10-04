@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/mema-football-2019/static/css/main.1d76449b.chunk.css",
+    "main.css": "/mema-football-2019/static/css/main.28d83890.chunk.css",
     "main.js": "/mema-football-2019/static/js/main.b09ddc50.chunk.js",
     "main.js.map": "/mema-football-2019/static/js/main.b09ddc50.chunk.js.map",
     "runtime~main.js": "/mema-football-2019/static/js/runtime~main.3d40c256.js",
@@ -8,8 +8,8 @@
     "static/js/2.c0e38dd5.chunk.js": "/mema-football-2019/static/js/2.c0e38dd5.chunk.js",
     "static/js/2.c0e38dd5.chunk.js.map": "/mema-football-2019/static/js/2.c0e38dd5.chunk.js.map",
     "index.html": "/mema-football-2019/index.html",
-    "precache-manifest.a85e1ef65f655ad3f6a4d62dd7bf1eec.js": "/mema-football-2019/precache-manifest.a85e1ef65f655ad3f6a4d62dd7bf1eec.js",
+    "precache-manifest.ba800c40738764f19338ee3cfb294f3f.js": "/mema-football-2019/precache-manifest.ba800c40738764f19338ee3cfb294f3f.js",
     "service-worker.js": "/mema-football-2019/service-worker.js",
-    "static/css/main.1d76449b.chunk.css.map": "/mema-football-2019/static/css/main.1d76449b.chunk.css.map"
+    "static/css/main.28d83890.chunk.css.map": "/mema-football-2019/static/css/main.28d83890.chunk.css.map"
   }
 }
