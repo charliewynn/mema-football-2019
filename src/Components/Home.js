@@ -19,6 +19,7 @@ function Home({ Outcome, Config }) {
       }}
     >
       <h1>{Config.announcement}</h1>
+      {Outcome.outcome.scores.length === 0 && <div>Loading</div>}
       <div id="GamesDiv">
         {Outcome.outcome.scores.map(game => (
           <GameCard
@@ -53,13 +54,16 @@ function Home({ Outcome, Config }) {
           ></PlayerCard>
         ))}
       </div>
-      <button
-        className="largeButton button2"
-        onClick={() => showHideScores(!showScoresTable)}
-      >
-        {showScoresTable ? "Hide" : "Show"} Scores Table
-      </button>
-      {showScoresTable && (
+
+      {Outcome.outcome.scores.length > 0 && (
+        <button
+          className="largeButton button2"
+          onClick={() => showHideScores(!showScoresTable)}
+        >
+          {showScoresTable ? "Hide" : "Show"} Scores Table
+        </button>
+      )}
+      {Outcome.outcome.scores.length > 0 && showScoresTable && (
         <div id="ScoresDiv">
           <PredictionsTable
             players={Outcome.outcome.players}
