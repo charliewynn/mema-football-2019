@@ -172,8 +172,9 @@ td {
 
 #ScoresDiv th {
   min-width: 50px;
+  max-width: 70px;
 }
 
-#ScoresDiv th {
+#ScoresDiv td {
   width: initial;
 }
