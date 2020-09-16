@@ -7,30 +7,28 @@ export default ({ players, games }) => (
   </table>
 );
 
-const GetTableHeaders = games => (
+const GetTableHeaders = (games) => (
   <tr>
     <th>Player</th>
-    {games.map(g => (
+    {games.map((g) => (
       <th key={g.team}>{g.team}</th>
     ))}
   </tr>
 );
 
-const GetPlayerPredictions = players =>
-  players.map(p => (
+const GetPlayerPredictions = (players) =>
+  players.map((p) => (
     <tr key={p.name}>
       <td>{p.name}</td>
-      <td>{p.houston}</td>
-      <td>{p.southDakota}</td>
-      <td>{p.ucla}</td>
-      <td>{p.texasTech}</td>
-      <td>{p.kansas}</td>
-      <td>{p.texas}</td>
-      <td>{p.westVirginia}</td>
-      <td>{p.kansasState}</td>
-      <td>{p.iowaState}</td>
-      <td>{p.baylor}</td>
-      <td>{p.tcu}</td>
-      <td>{p.osu}</td>
+      <td>{p.MOST}</td>
+      <td>{p.KSU}</td>
+      <td>{p.ISU}</td>
+      <td>{p.TEX}</td>
+      <td>{p.TCU}</td>
+      <td>{p.TTU}</td>
+      <td>{p.KU}</td>
+      <td>{p.OKST}</td>
+      <td>{p.WVU}</td>
+      <td>{p.BAY}</td>
     </tr>
   ));
