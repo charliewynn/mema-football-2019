@@ -2,17 +2,18 @@ import {
   SCORES_LOADED,
   PLAYERS_LOADED,
   START_LOAD_PLAYERS,
-  START_LOAD_SCORES
+  START_LOAD_SCORES,
 } from "../Actions/Types";
 
 export default function OutcomeReducer(
   state = {
-    loadingPlayers: false,
+    loadingPlayers: true,
     outcome: { scores: [], players: [] },
-    loadingScores: false
+    loadingScores: true,
   },
   action
 ) {
+  console.log("Outcome Reducer", action);
   switch (action.type) {
     case START_LOAD_PLAYERS:
       return { ...state, loadingPlayers: true };
@@ -22,25 +23,34 @@ export default function OutcomeReducer(
       state = {
         ...state,
         scores: action.scores,
-        loadingScores: false
+        loadingScores: false,
       };
+      console.log("Outcome scores", action.scores);
       return computeIfReady(state, action);
     case PLAYERS_LOADED:
       state = {
         ...state,
         players: action.players,
-        loadingPlayers: false
+        loadingPlayers: false,
       };
+      console.log("Outcome players", action.players);
+
       return computeIfReady(state, action);
     default:
       return state;
   }
 }
 
-const computeIfReady = state => {
+const computeIfReady = (state) => {
+  console.log(
+    "Maybe Compute, loading p, loading s",
+    state.loadingPlayers,
+    state.loadingScores
+  );
   if (state.loadingPlayers || state.loadingScores) return state;
 
   const { players, scores } = state;
+  console.log("Calculating", players, scores);
 
   for (let p of players) {
     p.gameScores = {};
@@ -52,7 +62,8 @@ const computeIfReady = state => {
     g.closestOu = [];
     g.closestOpp = [];
   }
-  for (let g of scores.filter(g => g.complete)) {
+  console.log("Calculating2", players, scores);
+  for (let g of scores.filter((g) => g.complete)) {
     let closest = { ou: 100, opp: 100 };
     g.ouWon = g.ouScore > g.oppScore;
     for (let p of players) {

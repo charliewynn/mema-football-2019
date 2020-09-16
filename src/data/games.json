@@ -1,0 +1,24 @@
+{
+  "scores": [
+    {
+      "id": "houston",
+      "team": "Houston",
+      "date": "9/1/2019 6:30 PM",
+      "home": "TRUE",
+      "ouScore": "49",
+      "oppScore": "31",
+      "complete": "TRUE",
+      "espnGameId": "401112114"
+    },
+    {
+      "id": "southDakota",
+      "team": "Houston",
+      "date": "9/1/2019 6:30 PM",
+      "home": "TRUE",
+      "ouScore": "49",
+      "oppScore": "31",
+      "complete": "TRUE",
+      "espnGameId": "401112114"
+    }
+  ]
+}

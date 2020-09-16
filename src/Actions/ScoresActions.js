@@ -1,29 +1,31 @@
 import { START_LOAD_SCORES, SCORES_LOADED, SCORES_ERROR } from "./Types";
+import GameData from "../data/games.json";
 
-const scoresURL = "https://api.sheety.co/63dbeee0-3aa4-4e79-ac39-545ac3ee7b86";
+//const scoresURL = "https://api.sheety.co/63dbeee0-3aa4-4e79-ac39-545ac3ee7b86";
 
 export const StartLoadScores = () => ({
-  type: START_LOAD_SCORES
+  type: START_LOAD_SCORES,
 });
 
-export const ScoresLoaded = scores => ({
+export const ScoresLoaded = (scores) => ({
   type: SCORES_LOADED,
-  scores
+  scores,
 });
 
-export const ScoresLoadingError = error => ({
+export const ScoresLoadingError = (error) => ({
   type: SCORES_ERROR,
-  error
+  error,
 });
 
 export const LoadScoresAction = () => {
-  return async dispatch => {
+  return async (dispatch) => {
     dispatch(StartLoadScores());
     try {
-      const response = await fetch(scoresURL);
-      const json = await response.json();
-      dispatch(ScoresLoaded(json));
+      //const response = await fetch(scoresURL);
+      //const json = await response.json();
+      dispatch(ScoresLoaded(GameData.scores));
     } catch (error) {
+      console.log("Error loading scores", error);
       dispatch(ScoresLoadingError(error));
     }
   };

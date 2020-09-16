@@ -1,0 +1,34 @@
+{
+  "players": [
+    {
+      "name": "Donna and Greg Wynn",
+      "houston": "34-24",
+      "southDakota": "45-10",
+      "ucla": "36-10",
+      "texasTech": "42-36",
+      "kansas": "36-17",
+      "texas": "28-21",
+      "westVirginia": "34-17",
+      "kansasState": "42-10",
+      "iowaState": "24-10",
+      "baylor": "41-20",
+      "tcu": "31-21",
+      "osu": "35-31"
+    },
+    {
+      "name": "Mema",
+      "houston": "34-24",
+      "southDakota": "45-10",
+      "ucla": "36-10",
+      "texasTech": "42-36",
+      "kansas": "36-17",
+      "texas": "28-21",
+      "westVirginia": "34-17",
+      "kansasState": "42-10",
+      "iowaState": "24-10",
+      "baylor": "41-20",
+      "tcu": "31-21",
+      "osu": "35-31"
+    }
+  ]
+}

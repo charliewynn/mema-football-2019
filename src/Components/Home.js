@@ -11,6 +11,7 @@ function Home({ Outcome, Config }) {
   const [showScoresTable, showHideScores] = useState(Config.showTable);
   const [selectedGame, changeSelectedGame] = useState(null);
 
+  console.log("Outcome", Outcome);
   return (
     <div
       id="HomeDiv"
@@ -21,11 +22,11 @@ function Home({ Outcome, Config }) {
       <div dangerouslySetInnerHTML={{ __html: Config.announcement }}></div>
       {Outcome.outcome.scores.length === 0 && <div>Loading</div>}
       <div id="GamesDiv">
-        {Outcome.outcome.scores.map(game => (
+        {Outcome.outcome.scores.map((game) => (
           <GameCard
             selected={game === selectedGame}
             key={game.id}
-            changeSelectedGame={game => {
+            changeSelectedGame={(game) => {
               game === selectedGame
                 ? changeSelectedGame(null)
                 : changeSelectedGame(game);
@@ -47,7 +48,7 @@ function Home({ Outcome, Config }) {
         </div>
       )}
       <div id="PlayersDiv">
-        {Outcome.outcome.players.map(player => (
+        {Outcome.outcome.players.map((player) => (
           <PlayerCard
             selectedGameTeam={selectedGame && selectedGame.team}
             guessedWinner={
@@ -85,11 +86,11 @@ function Home({ Outcome, Config }) {
   );
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   Scores: state.Scores,
   Players: state.Players,
   Outcome: state.Outcome,
-  Config: state.Config
+  Config: state.Config,
 });
 
 export default connect(mapStateToProps)(Home);
