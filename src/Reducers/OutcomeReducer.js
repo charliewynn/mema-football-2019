@@ -42,15 +42,9 @@ export default function OutcomeReducer(
 }
 
 const computeIfReady = (state) => {
-  console.log(
-    "Maybe Compute, loading p, loading s",
-    state.loadingPlayers,
-    state.loadingScores
-  );
   if (state.loadingPlayers || state.loadingScores) return state;
 
   const { players, scores } = state;
-  console.log("Calculating", players, scores);
 
   for (let p of players) {
     p.gameScores = {};
@@ -62,7 +56,7 @@ const computeIfReady = (state) => {
     g.closestOu = [];
     g.closestOpp = [];
   }
-  console.log("Calculating2", players, scores);
+  console.log("Calculating", players, scores);
   for (let g of scores.filter((g) => g.complete)) {
     let closest = { ou: 100, opp: 100 };
     g.ouWon = g.ouScore > g.oppScore;

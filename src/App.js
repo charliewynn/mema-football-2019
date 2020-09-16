@@ -20,7 +20,7 @@ function App({ LoadScores, LoadPlayers }) {
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <header className="App-header">
           <Link className="HeaderLink" to="/">
-            Mema Football Pool 2019
+            Mema Football Pool 2020
           </Link>
         </header>
         <Switch>
@@ -44,13 +44,10 @@ function App({ LoadScores, LoadPlayers }) {
   );
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     LoadScores: () => dispatch(LoadScoresAction()),
-    LoadPlayers: () => dispatch(LoadPlayersAction())
+    LoadPlayers: () => dispatch(LoadPlayersAction()),
   };
 };
-export default connect(
-  undefined,
-  mapDispatchToProps
-)(App);
+export default connect(undefined, mapDispatchToProps)(App);
