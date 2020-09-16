@@ -12,10 +12,10 @@
     },
     {
       "id": "southDakota",
-      "team": "Houston",
+      "team": "SouthDakota",
       "date": "9/1/2019 6:30 PM",
       "home": "TRUE",
-      "ouScore": "49",
+      "ouScore": "12",
       "oppScore": "31",
       "complete": "TRUE",
       "espnGameId": "401112114"
