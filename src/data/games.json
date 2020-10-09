@@ -15,18 +15,20 @@
       "team": "Kansas State",
       "date": "9/26/2020 2:00 PM",
       "home": false,
-      "ouScore": 0,
-      "oppScore": 0,
-      "espnGameId": "401235996"
+      "ouScore": 35,
+      "oppScore": 38,
+      "espnGameId": "401235996",
+      "complete": true
     },
     {
       "id": "ISU",
       "team": "Iowa State",
       "date": "10/3/2020 2:00 PM",
       "home": false,
-      "ouScore": 0,
-      "oppScore": 0,
-      "espnGameId": "401235999"
+      "ouScore": 30,
+      "oppScore": 37,
+      "espnGameId": "401235999",
+      "complete": true
     },
     {
       "id": "TEX",
