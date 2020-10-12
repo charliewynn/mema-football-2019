@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "213f0480664990b2af04120db697b195",
+    "revision": "63d7444abcf0130987ef7a3c2ace9930",
     "url": "/mema-football-2019/index.html"
   },
   {
-    "revision": "ed464df93a08b5118d80",
+    "revision": "2122a438244d2957255c",
     "url": "/mema-football-2019/static/css/main.c09aa747.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mema-football-2019/static/js/2.90a48523.chunk.js"
   },
   {
-    "revision": "ed464df93a08b5118d80",
-    "url": "/mema-football-2019/static/js/main.49236f21.chunk.js"
+    "revision": "2122a438244d2957255c",
+    "url": "/mema-football-2019/static/js/main.e0ace4a6.chunk.js"
   },
   {
     "revision": "17647e842e33fb447732",
