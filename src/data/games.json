@@ -35,9 +35,10 @@
       "team": "Texas",
       "date": "10/10/2020 2:00 PM",
       "home": false,
-      "ouScore": 0,
-      "oppScore": 0,
-      "espnGameId": "401236005"
+      "ouScore": 53,
+      "oppScore": 45,
+      "espnGameId": "401236005",
+      "complete": true
     },
     {
       "id": "TCU",
