@@ -45,18 +45,20 @@
       "team": "Texas Christian University",
       "date": "10/24/2020 2:00 PM",
       "home": false,
-      "ouScore": 0,
-      "oppScore": 0,
-      "espnGameId": "401236011"
+      "ouScore": 33,
+      "oppScore": 14,
+      "espnGameId": "401236011",
+      "complete": true
     },
     {
       "id": "TTU",
       "team": "Texas Tech",
       "date": "10/31/2020 2:00 PM",
       "home": false,
-      "ouScore": 0,
-      "oppScore": 0,
-      "espnGameId": "401236016"
+      "ouScore": 62,
+      "oppScore": 28,
+      "espnGameId": "401236016",
+      "complete": true
     },
     {
       "id": "KU",
@@ -65,7 +67,8 @@
       "home": true,
       "ouScore": 0,
       "oppScore": 0,
-      "espnGameId": "401236019"
+      "espnGameId": "401236019",
+      "complete": false
     },
     {
       "id": "OKST",
@@ -74,7 +77,8 @@
       "home": true,
       "ouScore": 0,
       "oppScore": 0,
-      "espnGameId": "401236027"
+      "espnGameId": "401236027",
+      "complete": false
     },
     {
       "id": "WVU",
@@ -83,7 +87,8 @@
       "home": false,
       "ouScore": 0,
       "oppScore": 0,
-      "espnGameId": "401236031"
+      "espnGameId": "401236031",
+      "complete": false
     },
     {
       "id": "BAY",
@@ -92,7 +97,8 @@
       "home": true,
       "ouScore": 0,
       "oppScore": 0,
-      "espnGameId": "401236033"
+      "espnGameId": "401236033",
+      "complete": false
     }
   ]
 }
