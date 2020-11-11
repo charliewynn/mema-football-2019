@@ -1,0 +1,5 @@
+1) open src/data/games.json
+2) edit accordingly (add complete:true and update score)
+3) add, commit, push
+4) npm run deploy
+5) refresh browser to make sure it works: https://cwynn.com/mema-football-2019

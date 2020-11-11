@@ -65,10 +65,10 @@
       "team": "Kansas",
       "date": "11/7/2020 2:00 PM",
       "home": true,
-      "ouScore": 0,
-      "oppScore": 0,
+      "ouScore": 62,
+      "oppScore": 9,
       "espnGameId": "401236019",
-      "complete": false
+      "complete": true
     },
     {
       "id": "OKST",
