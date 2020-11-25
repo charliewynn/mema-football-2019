@@ -75,10 +75,10 @@
       "team": "Oklahoma State",
       "date": "11/21/2020 2:00 PM",
       "home": true,
-      "ouScore": 0,
-      "oppScore": 0,
+      "ouScore": 41,
+      "oppScore": 13,
       "espnGameId": "401236027",
-      "complete": false
+      "complete": true
     },
     {
       "id": "WVU",
