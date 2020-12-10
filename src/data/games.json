@@ -95,10 +95,10 @@
       "team": "Baylor",
       "date": "12/5/2020 2:00 PM",
       "home": true,
-      "ouScore": 0,
-      "oppScore": 0,
+      "ouScore": 27,
+      "oppScore": 14,
       "espnGameId": "401236033",
-      "complete": false
+      "complete": true
     }
   ]
 }
